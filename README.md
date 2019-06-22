@@ -59,3 +59,14 @@ Qualifier values can be associated with specific arguments, narrowing the set of
 is chosen for each argument.
 - You can create your own custom qualifier annotations. Simply define an annotation and provide the `@Qualifier` 
 annotation within your definition. 
+
+## Loading values from a file
+
+Spring makes it easy to load values from a file
+- The `@PropertySource` annotation may be added to a class to indicate the location of the properties file to load from.
+- To inject properties from this file into a field, method, constructor parameter etc. we can use placeholders.
+
+The `@Value` annotation can be used to indicate which value should be loaded from the configuration file i.e 
+`@Value('${game.maxNumber:20}')`.
+- The `@Value` annotation is used for **expression based dependency injection**.
+
