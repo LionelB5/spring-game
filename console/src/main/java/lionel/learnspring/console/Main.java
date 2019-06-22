@@ -1,5 +1,9 @@
-package lionel.learnspring;
+package lionel.learnspring.console;
 
+import lionel.learnspring.AppConfig;
+import lionel.learnspring.Game;
+import lionel.learnspring.MessageGenerator;
+import lionel.learnspring.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
