@@ -22,4 +22,6 @@ public interface Game {
     boolean isGameWon();
 
     boolean isGameLost();
+
+    int getGuessCount();
 }
