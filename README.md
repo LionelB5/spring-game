@@ -22,3 +22,16 @@ configuration for the given component.
 **`@Component` is a generic stereotype for any Spring-managed component.`**
 - `@Repository`, `@Service`, and `@Controller` are specialization of `@Component` for more specific use cases,
 for instance, in the persistence, service, and presentation layers respectively.
+
+# Using Java Annotation Configuration
+
+Instead of defining an application's configuration using XML, we are able to use Java Annotation Configuration, so
+configuration meaning we can define our application's configuration in a Java class file.
+- Decorating the Java class used for configuration with the `@ComponentScan` annotation allows for automatic discovery
+of the beans to be configured (given an accurate `basePackages` argument is given to the `@ComponentScan` annotation).
+For this to work the modules classes must be decorated with an appropriate *stereotype* annotation i.e `@Component`,
+`@Service` or `@Controller`
+- **An alternative way** can be used to discover beans if one does not want to use ComponentScanning. Methods can be
+specified as part of the App Configuration Java class that return instance of beans. **This approach is sometimes
+preferred as it allows for one to perform some additional setup before instantiating a particular Bean. This approach
+helps to write type safe code.**
