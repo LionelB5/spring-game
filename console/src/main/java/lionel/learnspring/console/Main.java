@@ -1,6 +1,6 @@
 package lionel.learnspring.console;
 
-import lionel.learnspring.AppConfig;
+import lionel.learnspring.config.AppConfig;
 import lionel.learnspring.Game;
 import lionel.learnspring.MessageGenerator;
 import lionel.learnspring.NumberGenerator;

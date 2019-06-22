@@ -46,3 +46,16 @@ interface.
 `ApplicationEvent` (custom events may also be used) gets published to the `ApplicationContext`, that bean is notified.
 
 **This follows the standard Observer design pattern.**
+
+## Qualifiers
+
+**When there is a need for fine-tuning annotation-based autowiring we can use qualifiers.**
+- A qualifier is an annotation that you apply to a bean.
+- *The `@Primary` annotation is an effective way to use autowiring by type with several instances, when one primary 
+candidate can be determined.*
+- **When more control over the selection process is required**, the `@Qualifier` annotation can be used.
+
+Qualifier values can be associated with specific arguments, narrowing the set of type matches so that a specific bean 
+is chosen for each argument.
+- You can create your own custom qualifier annotations. Simply define an annotation and provide the `@Qualifier` 
+annotation within your definition. 
