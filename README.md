@@ -1,6 +1,6 @@
 # spring-game
 
-# Autowiring Beans
+## Autowiring Beans
 - @Autowired annotation may also be used with constructor and setter based dependency injection.
 - @Autowired annotation can be added to parameters of a constructor or setter method
 - The recommended and best practice is to use constructor based dependency injection. Although in some cases 
@@ -8,7 +8,7 @@
 - The Spring team generally recommends constructor injection as it enables you to implement application components as
 immutable objects and to ensure that required dependencies are not null.
 
-# Component Scanning
+## Component Scanning
 - Spring provides several sterotype annotations such as `@Component`, `@Service` and `@Controller`.
 - The word stereoptype means something conforming to a fixed or general pattern.
 - This is quite logical because it is recommended that you annotate your Controller classes with `@Controller`,
@@ -23,7 +23,7 @@ configuration for the given component.
 - `@Repository`, `@Service`, and `@Controller` are specialization of `@Component` for more specific use cases,
 for instance, in the persistence, service, and presentation layers respectively.
 
-# Using Java Annotation Configuration
+## Using Java Annotation Configuration
 
 Instead of defining an application's configuration using XML, we are able to use Java Annotation Configuration, so
 configuration meaning we can define our application's configuration in a Java class file.
@@ -35,3 +35,14 @@ For this to work the modules classes must be decorated with an appropriate *ster
 specified as part of the App Configuration Java class that return instance of beans. **This approach is sometimes
 preferred as it allows for one to perform some additional setup before instantiating a particular Bean. This approach
 helps to write type safe code.**
+
+## Application Events
+
+The `ApplicationContext` interface has a parent interface `ApplicationEventPublisher` that encapsulates event 
+publication functionality, this is an additional capability of `ApplicationContext`.
+- Event handling in the `ApplicationContext` is provided through the `ApplicationEvent` class and `ApplicationListener`
+interface.
+- If a bean that implements the `ApplicationListener` interface is deployed into the context, every time an 
+`ApplicationEvent` (custom events may also be used) gets published to the `ApplicationContext`, that bean is notified.
+
+**This follows the standard Observer design pattern.**
