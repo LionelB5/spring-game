@@ -15,6 +15,10 @@ public class Main {
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         NumberGenerator numberGenerator = context.getBean(NumberGenerator.class);
+        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
+
+        log.info("main message = {}", messageGenerator.getMainMessage());
+        log.info("result message = {}", messageGenerator.getResultMessage());
 
         int number = numberGenerator.next();
 

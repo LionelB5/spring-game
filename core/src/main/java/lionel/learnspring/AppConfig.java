@@ -15,6 +15,11 @@ public class AppConfig {
     }
 
     @Bean
+    public MessageGenerator messageGenerator() {
+        return new MessageGeneratorImpl();
+    }
+
+    @Bean
     public Game game() {
         return new GameImpl();
     }
