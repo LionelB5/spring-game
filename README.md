@@ -70,3 +70,36 @@ The `@Value` annotation can be used to indicate which value should be loaded fro
 `@Value('${game.maxNumber:20}')`.
 - The `@Value` annotation is used for **expression based dependency injection**.
 
+## Lombok
+
+**Lombok is a Java library that helps generate boilerplate code.**
+- Lombok uses the Annotation processor API.
+- Using Lombok we don't have to write **getters** and *setters* and many other methods that are very commonly used like
+**equals()**, **hashCode()** and **toString()**.
+
+### Some Lombok annotations
+`@Getter`
+- We can annotate any field to elt Lombok generate the default getter automatically.
+- A default getter returns the field, and is named `getName` if the field is called name 
+(or `isName` if the field's type is `boolean`)
+
+`@Setter`
+- A default setter is named `setName` if the field is called name, returns void, and takes a parameter of the same 
+type as the field. It simply sets the field to this value.
+
+`@ToString`
+- Generates boilerplate code for the toString method.
+
+`@EqualsAndHashCode`
+- Generates equals and hashCode methods.
+
+`@RequiredArgsConstructor` 
+- Generates a constructor with required arguments.
+
+`@Slf4j`
+- Generates a private static final field for SLF4J logger.
+
+`@Data`
+- Generates boilerplate code for POJO (Plain Old Java Object).
+- It combines `@Getter`, `@Setter`, `@ToString`, `@RequiredArgsConstructor`, and `@EqualsAndHashCode`.
+- Constructor is not generated if it has been declared already.
